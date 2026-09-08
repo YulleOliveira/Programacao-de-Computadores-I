@@ -10,7 +10,7 @@ int main {
 }
 
 
-R: Erros de sintaxe: falta de ponto e vírgula na linha 4, aspas duplas na linha 
+R: Erros de sintaxe: falta de ponto e vírgula na linha 4, falta de parênteses após o "main", aspas duplas na linha 
 6, cin deve usar ">>". Erro de lógica: O comando pede o dobro do número, mas é 
 calculado o quadrado do mesmo na linha 8.
 */

@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    float a, b, c, p, area;
+    cout << "Lado A: "; cin >> a;
+    cout << "Lado B: "; cin >> b;
+    cout << "Lado C: "; cin >> c;
+    
+    p = (a+b+c)/2;
+    area = sqrt(p*(p-a)*(p-b)*(p-c));
+    cout << "Área: " << area;
+    
+    return 0;
+}

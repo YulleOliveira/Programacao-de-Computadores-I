@@ -1,0 +1,4 @@
+Executar arquivo pela linha de comando: 
+
+g++ arquivo.cpp -o arquivo
+./arquivo

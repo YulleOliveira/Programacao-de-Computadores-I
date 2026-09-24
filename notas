@@ -1,16 +1,42 @@
 TERMINAL: COMANDOS BÁSICOS
 
-ls 
+| ls: 
 Lista os arquivos do diretório
 
-ls -la
-(l) lista informações (a) mostra tudo, inclusive os arquivos ocultos
+  ls -la
+  (l) lista informações (a) mostra tudo, inclusive os arquivos ocultos
 
-rm nomeArquivo
-Remove o arquivo 'nomeArquivo'
 
-rm -Rf nomePasta
-Remove a pasta e tudo o que tem dentro dela
+| vim:
+
+  vim arquivo01.txt
+  Cria o arquivo 'arquivo01.txt' e abre para edição
+
+  i
+  Depois de abrir o arquivo para editar, esse comando permite escrever dentro dele.
+
+  tecla esc
+  Fecha a edição
+
+  :wq
+  Salva e fecha o arquivo
+
+  :q
+  Fecha o arquivo
+
+
+touch arquivo1.txt arquivo2.txt
+Cria arquivos 
+
+| rm:
+  rm nomeArquivo
+  Remove o arquivo 'nomeArquivo'
+  
+  rm -Rf nomePasta
+  Remove a pasta e tudo o que tem dentro dela
+  
+  rm *.txt
+  Remove todos os arquivos com a extensão especificada
 
 cd nomePasta
 Abre a pasta 'nomePasta'
@@ -30,7 +56,7 @@ Executa o arquivo
 history
 Mostra o histórico de comandos
 
-mv
+| mv:
 Move ou altera o nome de arquivos ou pastas
 
   mv nomeArquivo ../nomeArquivo
@@ -45,8 +71,9 @@ Move ou altera o nome de arquivos ou pastas
 cat nomeArquivo
 Mostra o conteúdo do arquivo
 
-cp [origem] [destino]
-Copia o conteúdo do arquivo origem para o arquivo destino
+| cp:
+  cp [origem] [destino]
+  Copia o conteúdo do arquivo origem para o arquivo destino
 
   cp [origem] ../[destino]
   Faz a cópia no diretório anterior

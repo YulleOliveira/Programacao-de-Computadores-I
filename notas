@@ -1,4 +1,61 @@
-Executar arquivo pela linha de comando: 
+TERMINAL: COMANDOS BÁSICOS
+
+ls 
+Lista os arquivos do diretório
+
+ls -la
+(l) lista informações (a) mostra tudo, inclusive os arquivos ocultos
+
+rm nomeArquivo
+Remove o arquivo 'nomeArquivo'
+
+rm -Rf nomePasta
+Remove a pasta e tudo o que tem dentro dela
+
+cd nomePasta
+Abre a pasta 'nomePasta'
+
+cd ..
+Volta ao diretório anterior
+
+mkdir
+Criar pastas
 
 g++ arquivo.cpp -o arquivo
+Compilar arquivo C++
+
 ./arquivo
+Executa o arquivo
+
+history
+Mostra o histórico de comandos
+
+mv
+Move ou altera o nome de arquivos ou pastas
+
+  mv nomeArquivo ../nomeArquivo
+  Move o arquivo 'nomeArquivo' para o diretório anterior
+
+  mv nomeArquivo pasta01/nomeArquivo
+  Move 'nomeArquivo' para dentro da pasta 'pasta01'
+
+  mv nomeAnterior nomeAtual
+  Altera o nome do arquivo de 'nomeAnterior' para 'nomeAtual'
+
+cat nomeArquivo
+Mostra o conteúdo do arquivo
+
+cp [origem] [destino]
+Copia o conteúdo do arquivo origem para o arquivo destino
+
+  cp [origem] ../[destino]
+  Faz a cópia no diretório anterior
+
+pwd
+Mostra em qual diretório está atualmente
+
+whoami
+Mostra o nome de usuário
+
+
+# Roadmap: Cursos e materiais para estudar

@@ -3,7 +3,12 @@
 using namespace std;
 
 int main () {
-    float custo, convite;
+    float valor, custo, convite;
+    
+    valor = 5000;
+    ofstream arquivoValor("teatro.txt");
+    arquivoValor << valor;
+    arquivoValor.close();
     
     ifstream arquivoCusto("teatro.txt");
     arquivoCusto >> custo;

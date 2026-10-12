@@ -5,7 +5,7 @@ using namespace std;
 int main(){
     double valor;
     
-    cout << "Valor: "; cin >> valor;
+    cout << "Grau em decimal: "; cin >> valor;
     int grau = valor;
     int minuto = (valor - grau)*60;
     int segundo = ((valor - grau)*60 - minuto)*60;

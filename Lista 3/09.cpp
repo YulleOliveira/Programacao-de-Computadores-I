@@ -6,24 +6,26 @@ using namespace std;
 
 int main(){
     float n;
-    
+
+    // Leitura do arquivo já existente 'jazidas.txt' com os valores das extrações
     ifstream arquivo("jazidas.txt");
     
-    int c = 1;
-    int posicao;
-    float maior = -1;
-    while (arquivo >> n){
-        cout << n << endl;
-        
+    int c = 1;   // contador
+    int posicao;   // guarda a posição do maior valor atual dentro do loop
+    float maior = -1; 
+    while (arquivo >> n){   // extrai cada o conteúdo de cada linha do arquivo
+
+        // Verificação do maior valor
         if (n > maior){
             maior = n;
             posicao = c;
-            cout << "posicao atual: " << posicao << endl;
-        cout << "Valor de c: " << c << endl;
-        c ++;
         }
+        c ++;
     }
-    
+
+    arquivo.close();
+
+    // Identificação do dia da semana correspondente ao valor da posição encontrada do maior valor
     string dia;
     switch (posicao){
         case 1:
@@ -51,7 +53,6 @@ int main(){
     
     cout << "Dia da semana com a maior extração: " << dia << endl;
     cout << "Quantidade de ouro extraída: " << maior << "kg" << endl;
-    arquivo.close();
     
     return 0;
 }

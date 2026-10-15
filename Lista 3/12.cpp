@@ -1,32 +1,34 @@
-// Está incorreto
+// Incorreto
 
 #include <iostream>
-#include <fstream>
-#include <iomanip>
+#include <cmath>
 using namespace std;
 
 int main(){
-    int cibele, camila, celeste, n;
+    int cibele, camila, celeste, n1, n2, n3, maior, menor, intermediario;
     
-    for (int i = 0; i < 3; i++){
-        cin >> n;
-        
-        if (i == 0){
-            cibele = n;
-            camila = n;
-            celeste = n;
-        }
-        
-        if (n > cibele){
-            cibele = n;
-        } else if (n < celeste){
-            celeste = n;
-        } else {
-            camila = n;
-        }
+    cin >> n1 >> n2 >> n3;
+    
+    maior = max(n1,n2);
+    maior = max(maior,n3);
+    menor = min(n1,n2);
+    menor = min(menor,n3);
+    
+    if (n1 >= menor and n1 <= maior){
+        intermediario = n1;
+    }
+    if (n2 >= menor and n2 <= maior){
+        intermediario = n2;
+    }
+    if (n3 >= menor and n3 <= maior){
+        intermediario = n3;
     }
     
-    cout << "\n" << camila << endl;
+    cout << "menor: " << menor << endl;
+    cout << "maior: " << maior << endl;
+    cout << "intermediario: " << intermediario << endl;
+    
+    //cout << "\n" << camila << endl;
     
     return 0;
 }

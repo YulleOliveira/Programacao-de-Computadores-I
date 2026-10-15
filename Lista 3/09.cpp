@@ -13,7 +13,7 @@ int main(){
     int c = 1;   // contador
     int posicao;   // guarda a posição do maior valor atual dentro do loop
     float maior = -1; 
-    while (arquivo >> n){   // extrai cada o conteúdo de cada linha do arquivo
+    while (arquivo >> n){   // extrai o conteúdo de cada linha do arquivo
 
         // Verificação do maior valor
         if (n > maior){

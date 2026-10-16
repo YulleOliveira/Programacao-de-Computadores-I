@@ -1,34 +1,39 @@
-// Incorreto
-
 #include <iostream>
-#include <cmath>
 using namespace std;
 
 int main(){
-    int cibele, camila, celeste, n1, n2, n3, maior, menor, intermediario;
+    int idade[3];
     
-    cin >> n1 >> n2 >> n3;
-    
-    maior = max(n1,n2);
-    maior = max(maior,n3);
-    menor = min(n1,n2);
-    menor = min(menor,n3);
-    
-    if (n1 >= menor and n1 <= maior){
-        intermediario = n1;
-    }
-    if (n2 >= menor and n2 <= maior){
-        intermediario = n2;
-    }
-    if (n3 >= menor and n3 <= maior){
-        intermediario = n3;
+    // Entrada das idades
+    for (int i = 0; i < 3; i++){
+        cin >> idade[i];
     }
     
-    cout << "menor: " << menor << endl;
-    cout << "maior: " << maior << endl;
-    cout << "intermediario: " << intermediario << endl;
+    // Toma o primeiro valor do vetor como referência para comparação com os demais valores
+    int maiorValor = idade[0], maiorPosicao = 0;
+    int menorValor = idade[0], menorPosicao = 0;
+    for (int i = 1; i < 3; i++){
+        
+        if (idade[i] > maiorValor){ // Verifica o maior valor
+            maiorPosicao = i;
+            maiorValor = idade[i];
+        }  
+        
+        if (idade[i] < menorValor){ // Verifica o menor valor
+            menorPosicao = i;
+            menorValor = idade[i];
+        }
+    }
+   
+    // Obtém o valor intermediário como sendo aquele que está numa posição diferente do maior e do menor
+    int intermediario;
+    for (int i = 1; i < 3; i++){
+        if (i != maiorPosicao and i != menorPosicao){
+           intermediario = idade[i]; 
+        }
+    }
     
-    //cout << "\n" << camila << endl;
-    
+    cout << "Idade de camila: " << intermediario << endl;
+
     return 0;
 }

@@ -1,21 +1,29 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main(){
-    int n, fatorial = 1;
+    int n, contador, divisor, quociente;
 
-    cout << "Fatorial de:  "; cin >> n;
+    cout << "Digite um número: "; cin >> n;
+
+    contador = 1; divisor = 1; quociente = n; 
+    /* Contador e divisor já iniciam com o valor 1 já considerando o número 1 como divisor, 
+    reduzindo uma volta no loop*/
     
-    if (n >= 1){
-        for (int i = 2; i <= n; i++){
-            fatorial *= i;
+    do{
+        divisor++;
+        if (quociente % divisor == 0){   // Verifica se n é divisível pelo atual divisor do loop
+            quociente = quociente/divisor;
+            contador++;   // Conta a quantidade de divisores
         }
-        cout << n << "! = " << fatorial << endl;
-    
+    } while (divisor <= sqrt(n));
+
+    if (contador >= 2 and n != 2){  // Se um número for primo e diferen
+        cout << "composto" << endl;
     } else {
-        cout << "ERRO \nEscolha um número positivo." << endl;
+        cout << "primo" << endl;
     }
-    
 
     return 0;
 }

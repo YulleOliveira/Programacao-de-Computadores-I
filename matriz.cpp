@@ -1,71 +1,90 @@
-// Está com erro na construção da matriz, provavelmente no loop
-
 #include <iostream>
 using namespace std;
 
 int main(){
-
-    int a[2][2]; int b[2][2]; // Matrizes A e B
     
-    // Ajustar para trabalhar com matrizes que não são quadradas
-    int n;
-    do {
-        cout << "Número de linhas da matriz: "; cin >> n;
+    int linhasA, linhasB, colunasA, colunasB;
+    
+    // Escolha da quantidade de linhas e colunas da matriz A
+    do{
+        cout << "\nNúmero de linhas da matriz A: "; cin >> linhasA;
+        cout << "Número de colunas da matriz A: "; cin >> colunasA;
         
-        if (n > 4){
-            cout << "ERRO \nSelecione até 4 linhas.\n";
-        } else if (n <= 0){
-            cout << "ERRO \nSelecione um número positivo.\n";
+        if (linhasA > 4 || colunasA > 4){
+            cout << "ERRO \nEscolha até 4 linhas e/ou colunas.\n";
+        } else if (linhasA <= 0 || colunasA <= 0){
+            cout << "ERRO \nEscolha números positivos.\n";
+        }
+    } while ((linhasA > 4 || linhasA <= 0) || (colunasA > 4 || colunasA <= 0));
+    
+    
+    // Escolha da quantidade de linhas e colunas da matriz B
+    do {
+        cout << "\nNúmero de linhas da matriz B: "; cin >> linhasB;
+        cout << "Número de colunas da matriz B: "; cin >> colunasB;
+        
+        if (linhasB > 4 || colunasB > 4){
+            cout << "ERRO \nEscolha até 4 linhas e/ou colunas.\n";
+        } else if (linhasB <= 0 || colunasB <= 0){
+            cout << "ERRO \nEscolha números positivos.\n";
+        } else if (colunasA != linhasB){
+            cout << "ERRO \nO número de linhas da matriz B deve ser igual ao número de colunas da matriz A.\n";
         }
         
-    } while (n > 4 || n <= 0);
+    } while ((linhasA > 4 || linhasA <= 0) || (colunasA > 4 || colunasA <= 0) || (colunasA != linhasB));
     
-    cout << "Digite os elementos da matriz A: \n" << endl;
+    int a[linhasA][colunasA]; int b[linhasB][colunasB]; // Matrizes A e B
     
-    for (int i = 0; i < n; i++){      // Construção da matriz A
-        for (int j = 0; j < n; j++){
+    
+    // Construção da matriz A
+    cout << "\nDigite os elementos da matriz A: \n" << endl;
+    for (int i = 0; i < linhasA; i++){      
+        for (int j = 0; j < colunasA; j++){
             cin >> a[i][j];
         }
     }
     
-    cout << "\nDigite os elementos da matriz B: \n" << endl;
     
-    for (int i = 0; i < n; i++){      // Construção da matriz B
-        for (int j = 0; j < n; j++){
+    // Construção da matriz B
+    cout << "\nDigite os elementos da matriz B: \n" << endl;
+    for (int i = 0; i < linhasB; i++){      
+        for (int j = 0; j < colunasB; j++){
             cin >> b[i][j];
         }
     }
     
     cout << "\nMatriz A: \n";
-    for (int i = 0; i < n; i++){
-        for (int j = 0; j < n; j++){
+    for (int i = 0; i < linhasA; i++){
+        for (int j = 0; j < colunasA; j++){
             cout << a[i][j] << " ";
         }
         cout << endl;
     }
     
     cout << "\nMatriz B: \n";
-    for (int i = 0; i < n; i++){
-        for (int j = 0; j < n; j++){
+    for (int i = 0; i < linhasB; i++){
+        for (int j = 0; j < colunasB; j++){
             cout << b[i][j] << " ";
         }
         cout << endl;
     }
     
-    cout << "\nMatriz C = A x B: \n" << endl;
-    int c[2][2];
-    for (int iA = 0; iA < n; iA++){          // Linha A
-        for (int jB = 0; jB < n; jB++){      // Linha B
-            int elemento = 0;                // Inicialização do novo elemento c(ij) da matriz
-            for (int ji = 0; ji < n; ji++){  // Coluna A = linha B
+    
+    // Construção da matriz C = A x B
+    int c[linhasA][colunasB];
+    for (int iA = 0; iA < linhasA; iA++){           // Linha A
+        for (int jB = 0; jB < linhasB; jB++){       // Linha B
+            int elemento = 0;                       // Inicialização do novo elemento c(ij) da matriz
+            for (int ji = 0; ji < colunasA; ji++){  // Coluna A = linha B
                 elemento += a[iA][ji] * b[ji][jB];
             }
             c[iA][jB] = elemento;
         }
     }
 
-    for (int k = 0; k < n; k++){
-        for (int m = 0; m < n; m++){
+    cout << "\nMatriz C = A x B: \n" << endl;
+    for (int k = 0; k < linhasA; k++){
+        for (int m = 0; m < colunasB; m++){
             cout << c[k][m] << " ";
         }
         cout << endl;

@@ -22,12 +22,12 @@ int main () {
     cout << "Terceiro arquivo: "; cin >> arq3;
     ofstream arquivo3(arq3);
     
-        // Leitura di conteúdo do primeiro arquivo
+        // Leitura do conteúdo do primeiro arquivo
         ifstream leitura1(arq1);
         leitura1 >> conteudo1;
         leitura1.close();
         
-        // Leitura do contepudo do segundo arquivo
+        // Leitura do conteúdo do segundo arquivo
         ifstream leitura2(arq2);
         leitura2 >> conteudo2;
         leitura2.close();

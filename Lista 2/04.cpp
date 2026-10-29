@@ -18,7 +18,7 @@ int main () {
     arquivo2.close();
     
     // Nome do terceiro arquivo
-    string conteudo1, conteudo2, termo1, termo2, termo3;
+    string conteudo1, conteudo2, termo1, termo2;
     cout << "Terceiro arquivo: "; cin >> arq3;
     ofstream arquivo3(arq3);
     
